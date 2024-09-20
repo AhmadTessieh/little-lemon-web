@@ -1,58 +1,97 @@
-.Footer{
+/* Footer Styling */
+.Footer {
     width: 100%;
-    height: 400px;
+    height: auto; /* Allow height to adjust based on content */
     display: flex;
     flex-direction: row;
     background-color: #333333;
-    
-}
-
-.Footer div{
+    padding: 20px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in width/height calculation */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .Footer div {
     width: 25%;
-    height: 100%;
+    min-width: 200px; /* Ensure minimum width for better mobile view */
+    height: auto; /* Adjust height based on content */
     display: flex;
     flex-direction: column;
     gap: 5px;
     justify-content: flex-start;
     align-items: flex-start;
-}
-
-#footimg{
+  }
+  
+  #footimg {
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
     align-items: flex-start;
-}
-
-#footerimg{
-    
+    width: 100%; /* Make sure it takes up full width */
+    margin-bottom: 20px; /* Add some margin below the image */
+  }
+  
+  #footerimg {
     width: 160px;
-    height: 280px;
-    
-}
-
-.footp1 h4{
+    height: auto; /* Adjust height based on aspect ratio */
+  }
+  
+  .footp1 h4 {
     font-size: 20px;
     color: #F4CE14;
-    
-} 
-
-
-
-#footlist li{
+  }
+  
+  #footlist {
+    padding: 0;
+    margin: 0;
+  }
+  
+  #footlist li {
     font-size: 20px;
     list-style: none;
     color: #F4CE14;
-    
-}
-
-#footlist li a{
-    display: flex;
+  }
+  
+  #footlist li a {
+    display: block; /* Make links block-level for better spacing */
     font-size: 15px;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    justify-content: flex-start;
-    
-}
-
+    padding: 5px 0; /* Add some padding for spacing */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .Footer {
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: center; /* Center items horizontally */
+    }
+  
+    .Footer div {
+      width: 100%; /* Full width on small screens */
+      text-align: center; /* Center text inside each section */
+      margin-bottom: 20px; /* Add margin between sections */
+    }
+  
+    #footimg {
+      justify-content: center; /* Center image on small screens */
+    }
+  
+    #footerimg {
+      width: 120px; /* Adjust image size on small screens */
+      height: auto; /* Maintain aspect ratio */
+    }
+  
+    .footp1 h4 {
+      font-size: 18px; /* Slightly smaller font size on mobile */
+    }
+  
+    #footlist li {
+      font-size: 18px; /* Adjust font size */
+    }
+  
+    #footlist li a {
+      font-size: 14px; /* Adjust font size for better mobile readability */
+      padding: 10px 0; /* Increase padding for better touch targets */
+    }
+  }
+  

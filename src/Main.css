@@ -1,0 +1,42 @@
+.testimonials {
+  padding: 40px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 40px;
+  font-family: 'Karla', sans-serif;
+}
+
+.testimonials-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap */
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.testimonial-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%; /* Use full width for smaller screens */
+  max-width: 200px; /* Set a maximum width */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.rating {
+  font-size: 24px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.review {
+  font-size: 16px;
+  margin-top: 10px;
+}
