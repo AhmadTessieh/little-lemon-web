@@ -1,6 +1,7 @@
 import React from "react";
 import './Header.css';
 
+
 function Header() {
   const specials = [
     {
@@ -8,21 +9,21 @@ function Header() {
       description: 'Fresh and crispy ingredients with a hint of olive oil and feta cheese.',
       price: '$12.99',
       cta: 'Order & delivery',
-      image: require('./images/greek salad.jpg'),
+      image: require('../images/greek salad.jpg'),
     },
     {
       title: 'Bruschetta',
       description: 'Grilled bread with garlic and a delicious topping of fresh tomatoes and herbs.',
       price: '$8.99',
       cta: 'Order & delivery',
-      image: require('./images/restauranfood.jpg'),
+      image: require('../images/restauranfood.jpg'),
     },
     {
       title: 'Lemon Dessert',
       description: 'A zesty lemon dessert to finish your meal on a high note.',
       price: '$6.99',
       cta: 'Order & delivery',
-      image: require('./images/lemon dessert.jpg'),
+      image: require('../images/lemon dessert.jpg'),
     },
   ];
 

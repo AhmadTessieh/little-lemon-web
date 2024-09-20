@@ -1,5 +1,5 @@
-import "./Footer.css";
-import restaurant from './images/restaurant.jpg';
+import "../Footer/Footer.css";
+import restaurant from '../images/restaurant.jpg';
 function Footer() {
   return (
     <footer className="Footer">
