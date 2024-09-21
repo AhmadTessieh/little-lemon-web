@@ -1,29 +1,63 @@
+import { useReducer } from 'react';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+  Outlet,
+} from 'react-router-dom';
+import { AppProvider, ThemeProvider } from './context';
+import { Header, Footer } from './components';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home';
-import About from './About/About';
-import Menu from './Menu/Menu';
-import Reservations from './Reservations/Reservations';
-import Order from './Order/Order';
-import Login from './Login/Login';
-function App() {
-  return (
-    
-    <div className="App">
-     <Router>
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/reservations" element={<Reservations />} />
-        <Route path="/order" element={<Order />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </Router>
+import { Home, BookingPage, ConfirmedBooking } from './pages';
 
-      
-    </div>
+const Root = () => {
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route index element={<Home />} />
+      <Route path="bookings" element={<BookingPage />}>
+        <Route path="thank-you" element={<ConfirmedBooking />} />
+      </Route>
+    </Route>
+  )
+);
+
+function App() {
+  const initialAppState = {
+    previousLocation: ['/'],
+  };
+  const reducer = (state, { type, payload }) => {
+    switch (type) {
+      case 'setPreviousLocation': {
+        return {
+          // ...state,
+          // previousLocation: [...state.previousLocation]
+          //   .slice(0, 1)
+          //   .push(payload),
+        };
+      }
+
+      default:
+        break;
+    }
+  };
+  const [stateGlobal, dispatchGlobal] = useReducer(reducer, initialAppState);
+  return (
+    <AppProvider value={{ stateGlobal, dispatchGlobal }}>
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </AppProvider>
   );
 }
 
